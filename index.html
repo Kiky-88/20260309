@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>昀达 & 沈汇 婚礼邀请函 | Wedding Invitation</title>
+  <meta name="description" content="Two CS nerds getting married - 诚挚邀请您参加谢昀达和沈汇的婚礼">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ===== TERMINAL ENVELOPE ===== -->
+  <div id="envelope-cover">
+    <div class="terminal-invite">
+      <div class="terminal-bar">
+        <div class="terminal-dot"></div>
+        <div class="terminal-dot"></div>
+        <div class="terminal-dot"></div>
+      </div>
+      <div class="terminal-line t-comment">// wedding_invitation.js</div>
+      <div class="terminal-line">
+        <span class="t-keyword">import</span> <span class="t-punct">{ </span><span class="t-type">Love</span><span
+          class="t-punct">, </span><span class="t-type">Forever</span><span class="t-punct"> }</span> <span
+          class="t-keyword">from</span> <span class="t-string">'@umich/hearts'</span><span class="t-punct">;</span>
+      </div>
+      <div class="terminal-line"><br></div>
+      <div class="terminal-line">
+        <span class="t-keyword">const</span> <span class="t-type">couple</span> <span class="t-punct">= </span><span
+          class="t-function">merge</span><span class="t-punct">(</span><span class="t-string">"Yunta"</span><span
+          class="t-punct">, </span><span class="t-string">"Hui"</span><span class="t-punct">);</span>
+      </div>
+      <div class="terminal-line">
+        <span class="t-keyword">const</span> <span class="t-type">date</span> <span class="t-punct">= </span><span
+          class="t-keyword">new</span> <span class="t-function">Date</span><span class="t-punct">(</span><span
+          class="t-string">"2026-03-09"</span><span class="t-punct">);</span>
+      </div>
+      <div class="terminal-line"><br></div>
+      <div class="terminal-line">
+        <span class="t-type">couple</span><span class="t-punct">.</span><span class="t-function">invite</span><span
+          class="t-punct">(</span><span class="t-string">"YOU"</span><span class="t-punct">);</span> <span
+          class="t-comment">// Yes, you! 💛💙</span>
+      </div>
+      <div class="terminal-line type-line" style="visibility:hidden;">
+        <span class="t-punct">> </span><span class="t-type">Ready to open?</span> <span
+          class="t-function">click</span><span class="t-punct">()</span><span class="t-cursor"></span>
+      </div>
+    </div>
+    <p class="envelope-hint">✨ 点击任意位置打开 Click anywhere to open ✨</p>
+  </div>
+
+  <!-- ===== BACKGROUND EFFECTS ===== -->
+  <canvas id="particles-canvas"></canvas>
+  <canvas id="matrix-canvas"></canvas>
+
+  <div class="main-content">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-ornament">
+        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 20 Q30 5 60 20 Q90 35 110 20" stroke="#FFCB05" stroke-width="1.5" fill="none" />
+          <path d="M10 20 Q30 35 60 20 Q90 5 110 20" stroke="#00274C" stroke-width="1.5" fill="none" />
+          <circle cx="60" cy="20" r="4" fill="#FFCB05" />
+        </svg>
+      </div>
+
+      <p class="hero-code-tag"><span class="t-comment">// git commit -m "best decision ever"</span></p>
+
+      <div class="names-row">
+        <div class="name-pair">
+          <h1>Yunta Hsieh</h1>
+          <p class="cn-name">谢昀达</p>
+        </div>
+        <span class="ampersand">&</span>
+        <div class="name-pair">
+          <h1>Hui Shen</h1>
+          <p class="cn-name">沈汇</p>
+        </div>
+      </div>
+
+      <div class="hero-code-bottom">
+        <span class="t-comment">// status: </span><span class="t-string">"merging branches forever"</span>
+      </div>
+
+      <div class="date-banner">2026 · 03 · 09</div>
+
+      <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section" id="countdown">
+      <h2>倒计时</h2>
+      <p class="section-en">Counting Down</p>
+      <div class="divider"></div>
+      <p style="color: var(--text-light); font-size: 0.95rem;">距离我们携手走入婚姻殿堂还有</p>
+      <p class="en-text">Until we say "I do"</p>
+      <p class="code-snippet">setTimeout(wedding, remaining_ms);</p>
+      <div class="countdown-grid">
+        <div class="countdown-item">
+          <div class="number" id="cd-days">0</div>
+          <div class="label">天 Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="cd-hours">00</div>
+          <div class="label">时 Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="cd-mins">00</div>
+          <div class="label">分 Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="cd-secs">00</div>
+          <div class="label">秒 Seconds</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UMICH + CS BANNER -->
+    <section style="text-align:center; padding: 30px 20px;">
+      <div class="cs-banner">
+        <div class="terminal-bar" style="margin-bottom:15px; padding-bottom:10px;">
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+        </div>
+        <div class="cs-line"><span class="t-comment">/**</span></div>
+        <div class="cs-line"><span class="t-comment"> * 🎓 University of Michigan — Ann Arbor</span></div>
+        <div class="cs-line"><span class="t-comment"> * 📚 Two CS nerds, one love story</span></div>
+        <div class="cs-line"><span class="t-comment"> * 两个计算机系的书呆子，一段爱情故事</span></div>
+        <div class="cs-line"><span class="t-comment"> * 💛💙 Go Blue, Go Love!</span></div>
+        <div class="cs-line"><span class="t-comment"> */</span></div>
+        <div class="cs-line" style="margin-top:8px;">
+          <span class="t-keyword">class</span> <span class="t-type">OurStory</span> <span
+            class="t-keyword">extends</span> <span class="t-type">Love</span> <span class="t-punct">{</span>
+        </div>
+        <div class="cs-line">&nbsp;&nbsp;<span class="t-keyword">constructor</span><span class="t-punct">() {</span>
+          <span class="t-keyword">super</span><span class="t-punct">(</span><span class="t-string">"forever"</span><span
+            class="t-punct">); }</span></div>
+        <div class="cs-line"><span class="t-punct">}</span></div>
+      </div>
+    </section>
+
+    <!-- LOVE STORY -->
+    <section id="story">
+      <h2>我们的故事</h2>
+      <p class="section-en">Our Story</p>
+      <div class="divider"></div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="year">// 2025 — Ann Arbor, MI</div>
+          <div class="year-title">初遇 First Met</div>
+          <p>在密歇根大学的校园里，命运安排了我们的相遇。安娜堡的那个秋天，金黄的树叶铺满了 Diag，我们的故事也悄然开始。</p>
+          <p class="en-text">Destiny brought us together on the UMich campus. That autumn in Ann Arbor, golden leaves
+            covered the Diag, and our story quietly began. 〽️</p>
+          <div class="code-comment">// git init our-love-story</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">// 2025 — UMich Campus</div>
+          <div class="year-title">相知 Growing Close</div>
+          <p>一起在 Shapiro Library debug 到深夜，一起去 Big House 看 Wolverines 的比赛呐喊 Go Blue，一起在 State Street
+            散步闲聊——从同学到挚友，每一天都在确认彼此的心意。</p>
+          <p class="en-text">Late nights debugging at Shapiro Library, cheering "Go Blue!" at the Big House, strolling
+            down State Street — from classmates to best friends, every day confirmed what our hearts already knew. ☕</p>
+          <div class="code-comment">// pair programming IRL</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">// 2025.10.10</div>
+          <div class="year-title">在一起 Together</div>
+          <p>在这个十全十美的日子里，在安娜堡的星空下，我们勇敢地牵起了彼此的手。从此，两个 Wolverine 变成了"我们"。</p>
+          <p class="en-text">On this perfect date, under the Ann Arbor starry sky, we bravely held each other's hands.
+            Two Wolverines became "us." 💛💙</p>
+          <div class="code-comment">// git merge yunta hui --no-ff</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">// proposal.execute()</div>
+          <div class="year-title">求婚 The Proposal</div>
+          <p>"余生请多多指教。" 在最浪漫的时刻，我们许下了对彼此一生的承诺。</p>
+          <p class="en-text">"Here's to the rest of our lives." In the most romantic moment, we made our lifelong
+            promise. Go Blue, forever. 💍</p>
+          <div class="code-comment">// return Promise.resolve("YES! 💍")</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">// 2026.03.09 — THE BIG DAY</div>
+          <div class="year-title">大日子 The Big Day</div>
+          <p>我们将在这座让我们相遇相爱的城市——安娜堡，携手步入婚姻的殿堂，在亲朋好友的见证下，开启人生的新篇章。</p>
+          <p class="en-text">In the city where we fell in love — Ann Arbor — we will walk down the aisle together,
+            beginning a new chapter surrounded by those we love. 🎊</p>
+          <div class="code-comment">// git tag v1.0.0 "happily-ever-after"</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEDDING DETAILS -->
+    <section id="details">
+      <h2>婚礼详情</h2>
+      <p class="section-en">Wedding Details</p>
+      <div class="divider"></div>
+
+      <div class="details-cards">
+        <div class="detail-card">
+          <div class="icon">📅</div>
+          <h3>日期 Date</h3>
+          <p>2026年3月9日<br>星期一 Monday<br>March 9, 2026</p>
+        </div>
+        <div class="detail-card">
+          <div class="icon">⏰</div>
+          <h3>时间 Time</h3>
+          <p>上午 10:00<br>10:00 AM<br>Morning Ceremony</p>
+        </div>
+        <div class="detail-card">
+          <div class="icon">📍</div>
+          <h3>地点 Venue</h3>
+          <p>美国·密歇根·安娜堡<br>Ann Arbor, MI, USA<br><em style="font-size:0.8rem;color:var(--gold-muted)">(详细地址待定 TBD)</em>
+          </p>
+        </div>
+        <div class="detail-card">
+          <div class="icon">👔</div>
+          <h3>着装建议 Dress Code</h3>
+          <p>商务休闲 Smart Casual<br>🌿 自在舒适即可 🌿<br>Come as you are</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WISHES -->
+    <section class="wishes-section" id="wishes">
+      <h2>送上祝福</h2>
+      <p class="section-en">Send Your Wishes</p>
+      <div class="divider"></div>
+      <p class="code-snippet" style="margin-bottom:20px;">wishes.push(yourMessage); // 留下你的祝福 Leave a message</p>
+
+      <form class="wishes-form" id="wish-form">
+        <input type="text" id="wish-name" placeholder="你的名字 / Your Name" required>
+        <textarea id="wish-text" placeholder="写下你的祝福... / Write your wishes..." required></textarea>
+        <button type="submit" class="btn-submit">git push origin wishes 🌟</button>
+      </form>
+
+      <div class="wishes-wall" id="wishes-wall"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Yunta & Hui</p>
+      <p class="footer-cn">期待与您分享这份幸福与喜悦</p>
+      <p class="footer-cn" style="margin-top:5px;font-size:0.85rem;">We look forward to celebrating with you 🥂</p>
+      <p class="footer-code">// Made with ❤️ + lots of ☕ | Built on love, deployed forever</p>
+    </footer>
+  </div>
+
+  <button class="music-toggle" id="music-toggle" title="播放音乐 Play Music">🎶</button>
+  <script src="script.js"></script>
+</body>
+
+</html>
